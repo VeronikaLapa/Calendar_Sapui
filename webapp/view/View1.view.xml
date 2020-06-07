@@ -1,0 +1,20 @@
+<mvc:View 
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:u="sap.ui.unified" 
+	xmlns:l="sap.ui.layout"
+	controllerName="ifmo.itmo_clendar_2020_lvv.controller.View1"
+	displayBlock="true">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<mvc:XMLView viewName="ifmo.itmo_clendar_2020_lvv.view.WeekendList"/>
+						<mvc:XMLView viewName="ifmo.itmo_clendar_2020_lvv.view.Calendar"/>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

@@ -1,0 +1,69 @@
+<mvc:View 
+xmlns:mvc="sap.ui.core.mvc" 
+xmlns="sap.m" xmlns:u="sap.ui.unified" 
+xmlns:l="sap.ui.layout" 
+controllerName="ifmo.itmo_clendar_2020_lvv.controller.Calendar" 
+displayBlock="true">
+	<Toolbar>
+			<Label
+				text="{i18n>from}"
+				class="labelMarginLeft" 
+			/>
+			<Text
+					id="selectedDateFrom"
+					text="{i18n>noSelect}"
+					class="labelMarginLeft"/>
+			<ToolbarSpacer/>
+			<Label
+					text="{i18n>to}"
+					class="labelMarginLeft" />
+			<Text
+					id="selectedDateTo"
+					text="{i18n>noSelect}"
+					class="labelMarginLeft"/>
+			<ToolbarSpacer/>
+			<Label
+					text="{i18n>all}"
+					class="labelMarginLeft" />
+			<Text
+					id="duration"
+					text="-"
+					class="labelMarginLeft"/>
+			<Label
+					text="{i18n>counted}"
+					class="labelMarginLeft" />
+			<Text
+					id="counted"
+					text="-"
+					class="labelMarginLeft"/>
+			<Label
+					text="{i18n>working}"
+					class="labelMarginLeft" />
+			<Text
+					id="working"
+					text="-"
+					class="labelMarginLeft"/>
+			<ToolbarSpacer/>
+				<Button type="Accept"
+				text="{i18n>add}"
+				press="onPress"
+				id="addButton"
+				enabled="false">
+					<layoutData>
+						<FlexItemData growFactor="1" />
+					</layoutData>
+				</Button>	
+	</Toolbar>
+	<l:HorizontalLayout>
+		<u:CalendarLegend id="legend" class="sapUiResponsiveMargin"/>
+		<u:Calendar 
+			id="calendar" 
+			months="12" 
+			intervalSelection="true"
+			showWeekNumbers="false"
+			class="sapUiResponsiveMargin"
+			legend="legend"
+			select="handleCalendarSelect"/>
+	</l:HorizontalLayout>
+
+</mvc:View>

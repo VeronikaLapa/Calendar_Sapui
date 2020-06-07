@@ -1,0 +1,60 @@
+<mvc:View 
+   xmlns="sap.m"
+   xmlns:mvc="sap.ui.core.mvc"
+   controllerName="ifmo.itmo_clendar_2020_lvv.controller.WeekendList">
+	<Table id="WeekendsList"
+	items="{
+			path: 'holiday>/holiday/list',
+			sorter: {
+				path: 'from'
+			}
+			}" 
+	>
+		<infoToolbar>
+			<OverflowToolbar>
+				<Label text="{i18n>ListTitle}"/>
+			</OverflowToolbar>
+		</infoToolbar>
+		<columns>
+			<Column>
+				<Text text="{i18n>from}" />
+				<footer><Text text="{i18n>total}" /></footer>
+			</Column>
+			<Column>
+				<Text text="{i18n>to}" />
+			</Column>
+			<Column>
+				<Text text="{i18n>all}" />
+				<footer><Text text="{holiday>/holiday/duration}" /></footer>
+			</Column>
+			<Column>
+				<Text text="{i18n>counted}" />
+				<footer><Text text="{holiday>/holiday/counted}" /></footer>
+			</Column>
+			<Column>
+				<Text text="{i18n>working}" />
+				<footer><Text text="{holiday>/holiday/working}" /></footer>
+			</Column>
+			<Column>
+				<Text text="{i18n>delete}" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<Text
+						text="{holiday>from}" />
+					<Text
+						text="{holiday>to}" />
+					<Text
+						text="{holiday>duration}" />
+					<Text
+						text="{holiday>counted}" />
+					<Text
+						text="{holiday>working}" />
+					<Button type="Reject" text="{i18n>delete}" press="onDelete"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</mvc:View>
